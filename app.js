@@ -10,7 +10,7 @@ const app = express();
 
 const queryRouter = require("./Routers/QueryRouter");
 //Create a readable stream
-app.use("",queryRouter);
+app.use("/api",queryRouter);
 
 
 app.listen(3000, function () {

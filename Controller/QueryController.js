@@ -2,7 +2,7 @@ const fs = require("fs");
 const file = "Input.txt";
 
 
-//http://localhost:3000/WordCount
+//http://localhost:3000/api/WordCount
 function getTotalWordCount(req, res) {
   let wordCount = 0;
   const readerStream = fs.createReadStream(file);
@@ -21,8 +21,8 @@ function getTotalWordCount(req, res) {
   });
 }
 
-//http://localhost:3000/frequentlyOccuring/most
-//http://localhost:3000/frequentlyOccuring/least
+//http://localhost:3000/api/frequentlyOccuring/most
+//http://localhost:3000/api/frequentlyOccuring/least
 function getFrequentlyOccuringWord(req,res)
 {
   let {type} = req.params;
@@ -88,7 +88,7 @@ function getFreqWord(map) {
     return keys;
   }
 
-//http://localhost:3000/wordfreq/a
+//http://localhost:3000/api/wordfreq/a
 function getWordFreq(req,res){
     let {word} = req.params;
     let freq = 0;
@@ -112,7 +112,7 @@ function getWordFreq(req,res){
       console.log(err.stack);
     });
   }
-//http://localhost:3000/SentenceCount
+//http://localhost:3000/api/SentenceCount
 function getSentenceCount(req,res){
     let sentenceCount = 0;
   const readerStream = fs.createReadStream(file);
